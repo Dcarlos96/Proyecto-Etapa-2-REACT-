@@ -1,0 +1,54 @@
+@use "sass:map";
+@use "../utils/variables" as*;
+
+.footer__container {
+        background-color: $light-secondary-color;
+        margin-top: 2rem;
+        width: 100%;
+        color: $black-color;
+        display: fixed;
+        
+        
+.footer__wrapp {
+            
+        justify-content: space-between;
+        align-items: center;
+         .footer__socialmedia {
+        display: flex;
+        justify-content: center; 
+        align-items: center;
+        gap: 3rem; 
+            
+.footer__socialmedia-link {
+        display: flex;
+        align-items: center;
+        color: $black-color;
+        font-size: 1rem;
+        text-decoration: none;
+        transition: color 0.3s;
+
+        span {
+            margin-left:1rem;
+        }
+
+        &:hover {
+            color: $strong-primary-color;
+        }
+        @media screen and (max-width: map.get($grid-breakpoints, md)) {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+        }
+            }
+            .navbar__menu-button {
+            @media screen and (min-width: map.get($grid-breakpoints, md)) {
+                display: none;
+        }
+
+        svg {
+            font-size: 2rem;
+        }
+    }
+  }
+}
+}

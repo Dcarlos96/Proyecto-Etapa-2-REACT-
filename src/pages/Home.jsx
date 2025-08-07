@@ -1,0 +1,17 @@
+import Container from "../components/Container"
+import Text from "../components/Text"
+import ProductGrid from "../layout/ProductGrid"
+
+
+
+
+function Home() {
+  return (
+    <Container as="main" className="m-t pad">
+        <Text as="h2">Productos</Text>
+        <ProductGrid/>
+    </Container>
+  )
+}
+
+export default Home

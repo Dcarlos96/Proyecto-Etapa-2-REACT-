@@ -1,0 +1,50 @@
+@use "variables" as *;
+
+@each $key, $prop in $spacings {
+    @for $i from 0 through 12 {
+        .#{$key}-#{$i} {
+            #{$prop}: $i * 0.25rem;
+        }
+    }
+}
+
+.w-100 {
+    width: 100%;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.space-between {
+    justify-content: space-between;
+}
+
+.justify-end {
+    justify-content: flex-end;
+}
+
+.align-center {
+    align-items: center;
+}
+
+.logo {
+  width: 50px; 
+  height: auto; 
+}
+
+.m-t {
+    margin-top: 5rem;
+}
+
+.pad{
+padding: 1rem;
+}
+
+.img {
+  width: 250px;
+  height: 200px;
+  object-fit: cover; /* Recorta la imagen manteniendo el aspecto visual */
+  border-radius: 8px; /* Opcional: bordes redondeados */
+  margin: 0.5rem; /* Espaciado opcional */
+}

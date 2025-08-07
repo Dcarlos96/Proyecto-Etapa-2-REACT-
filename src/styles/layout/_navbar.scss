@@ -1,0 +1,74 @@
+@use "sass:map";
+@use "../utils/variables" as *;
+
+.navbar__container {
+  background-color: $navbar-bg-color;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 4rem;
+  width: 100%;
+  color: $black-color;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+.navbar__wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  background-color: $navbar-bg-color;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.main-content {
+  margin-top: 8rem; // o ajustá según el alto total del header + nav
+}
+
+    
+.navbar__menu {
+  background-color: $navbar-bg-color;
+  padding: 0.5rem 0;
+
+  .navbar__navigation {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    padding: 0;
+    margin: 0;
+
+    li {
+      list-style: none;
+
+      a {
+        text-decoration: none;
+        color: $white-color;
+
+        &:hover {
+          color: $strong-primary-color;
+        }    
+
+            &:visited {
+                color: $grey-color;
+            }
+            @media screen and (max-width: map.get($grid-breakpoints, md)) {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+            }
+            .navbar__menu-button {
+            @media screen and (min-width: map.get($grid-breakpoints, md)) {
+                display: none;
+            }
+          }
+        }
+    }
+}
+    
+
+
+.logo {
+    width: 40px;
+    margin-right: 1rem;
+}

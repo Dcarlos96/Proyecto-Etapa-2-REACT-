@@ -27,14 +27,7 @@ const validationsUpload ={
         validation: value => value.length > 3,
         errorText: "Debe tener mas de 3 letras"
     },
-    ageFrom:{
-        validation: value => value.length > 0,
-        errorText: "La edad debe ser mayor a 0"
-    },
-    ageTo:{
-        validation: value => value.length > 0 && value <= 80,
-        errorText: "La edad debe ser mayor a 0 y menor a 80"
-    },
+    
 }
 
 function Upload() {
@@ -126,7 +119,7 @@ function Upload() {
                         },
                         {
                             name:"img",
-                            type:"text",
+                            type:"file",
                             label:" URL de la Imagen"
                         },
                     ]}

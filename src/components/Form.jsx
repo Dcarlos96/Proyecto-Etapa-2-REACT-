@@ -16,7 +16,13 @@ function Form({
                 ({name, label, type}) => 
                     <Box key={name} className={`form__input-group${type === "checkbox" ? " d-flex align-center " : ""}`}>
                         <Text as='label' className="form__label" htmlFor={name} >{label} </Text>
-                        <input id={name} name={name} type={type} value={values [name]} onChange={onChange} className={`form__input ${ errors[name] ? "with-error" : ""}`}/>
+                        <input 
+                        id={name} 
+                        name={name} 
+                        type={type} 
+                        value={type !== "file" ? values [name] : values[name].filename} 
+                        onChange={onChange} 
+                        className={`form__input ${ errors[name] ? "with-error" : ""}`}/>
                         {errors[name] && <Text as="span" className="form__error">{errors[name]} </Text>}
                     </Box>
             )

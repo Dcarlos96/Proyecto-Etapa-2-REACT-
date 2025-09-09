@@ -6,16 +6,26 @@ const axiosInstance = axios.create({
 })
 
 export const getProducts = async () => {
-    const resp = await axiosInstance.get("/market-product")
-    return resp.data
+    const resp = await axiosInstance.get("/products")
+    return resp.data.products
 }
 export const postProducts = async body => {
-    const resp = await axiosInstance.post("/market-product", body)
-    return resp.data
+    const formData = new FormData()
+
+    Object.entries(body).forEach(([key, value]) => {
+        formData.append(key, value)
+    })
+
+    const resp = await axiosInstance.post("/products", formData, {
+        headers:{
+            "Content-Type": "multipart/form-data"
+        }
+    })
+    return resp.data.products
 }
 
 export const postContact = async body => {
-    const resp = await axiosInstance.post("/contacts", body)
+    const resp = await axiosInstance.post("/contact", body)
     return resp.data
 }
- // para hacer funcionar el .env y  url de mockApi
+ 
